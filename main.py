@@ -27,7 +27,7 @@ def home():
 def predict():
     int_features = [float(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
+    prediction = classifier.predict(final_features)
     print(prediction[0])
 
     return render_template('home.html', prediction_text="prediction is {}".format(prediction[0]))
